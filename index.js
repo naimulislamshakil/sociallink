@@ -28,13 +28,9 @@ mongoose
 	.then(() => console.log('SOCIALINK Database Connected Successfully!'))
 	.catch((err) => console.log(err));
 
-// MADDILWARE
-app.use(cors());
-app.use(express.json());
-
 // CALL ROUTE
-app.use('/api/v1', userRoute);
-app.use('/api/v1', postRoute);
+app.use('/', userRoute);
+app.use('/', postRoute);
 
 app.get('/', (req, res) => {
 	res.send('<h1>How are you?</h1>');
