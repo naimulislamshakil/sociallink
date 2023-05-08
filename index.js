@@ -5,8 +5,8 @@ const cors = require('cors');
 const port = process.env.PORT || 5000;
 require('dotenv').config();
 
-// const userRoute = require('./Routes/V1/user.route');
-// const postRoute = require('./Routes/V1/post.route');
+const userRoute = require('./Routes/V1/user.route');
+const postRoute = require('./Routes/V1/post.route');
 
 app.use(express.json());
 app.use(cors());
@@ -24,8 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 // CALL ROUTE
-// app.use('/api/v1', userRoute);
-// app.use('/api/v1', postRoute);
+app.use('/api/v1', userRoute);
+app.use('/api/v1', postRoute);
 
 app.get('/', (req, res) => {
 	res.send('<h1>How are you?</h1>');
